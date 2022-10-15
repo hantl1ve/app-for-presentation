@@ -1,0 +1,108 @@
+.toDo-main {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  height: 40px;
+  width: 700px;
+  padding: 0 20px;
+  background-color: rgb(255, 235, 239);
+  transition: background-color .2s linear;
+}
+
+.input:focus {
+  background-color: rgb(255, 214, 221);
+}
+
+.inputButton {
+  height: 44px;
+  cursor: pointer;
+  width: 100px;
+  background-color:rgb(214, 253, 255);
+  transition: background-color .3s linear;
+}
+
+.inputButton:hover {
+  background-color: rgb(182, 251, 255);
+}
+
+.notesItem-wrapper {
+  margin-top: 20px;
+  width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.noteItem {
+  width: 260px;
+  min-height: 100px;
+  margin: 5px;
+  background-color:rgb(182, 251, 255);
+  padding: 8px;
+  border: 2px grey solid;
+  overflow-wrap: break-word;
+  position: relative;
+}
+
+.noteItem textarea {
+  background-color:rgba(182, 251, 255, 0);
+  border:rgba(0, 0, 0, 0);
+  outline: none;
+  resize: none;
+}
+
+.noteItem textarea::-webkit-scrollbar {
+  width: 3px;
+}
+
+.noteItem textarea::-webkit-scrollbar-track {
+  background: rgba(255, 166, 0, 0);
+}
+
+.noteItem textarea::-webkit-scrollbar-thumb {
+  background-color: rgb(196, 196, 196);
+}
+
+.removeNote {
+  position: absolute;
+  top: -2px;
+  right: 2px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.248);
+  transition: color .2s linear;
+  font-size: 20px;
+}
+
+.removeNote:hover {
+  color: rgba(99, 99, 99, 0.856);
+}
+
+.saveNote {
+  position: absolute;
+  top: 20px;
+  right: 2px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.248);
+  transition: color .2s linear;
+  font-size: 17px;
+}
+
+.saveNote:hover {
+  color: rgb(46, 148, 46);
+}
+
+.saveNote-status {
+  z-index: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color:rgba(255, 214, 221, 0.819);
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+}

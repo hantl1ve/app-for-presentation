@@ -1,0 +1,41 @@
+.randomBackground-wrapper {
+  width: 600px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.btn {
+  width: 150px;
+  height: 70px;
+  background-color: rgb(188, 242, 253);
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px grey solid;
+  transition: all .2s linear;
+}
+
+.btn:hover {
+  background-color: rgb(168, 227, 250);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.randomBackground-item {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  border: 3px grey solid;
+  transition: all .3s linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.randomBackground-item:hover {
+  transform: rotate(90deg) translateY(5px);
+  color: rgba(255, 255, 255, 0);
+  box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}

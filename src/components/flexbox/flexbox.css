@@ -1,0 +1,46 @@
+.flexboxWrapper {
+  background-color: rgb(232, 249, 148);
+  width: 800px;
+  padding: 20px;
+  margin: 30px 0;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.flexButtons-wrapper {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.flexItems-wrapper {
+  display: flex;
+}
+
+.flexItem {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  background-color:rgb(205, 148, 249);
+  border: 1px rgb(18, 18, 18) solid;
+}
+
+.flexButtons {
+  cursor: pointer;
+  padding: 10px;
+  background-color: rgb(238, 215, 255);
+  transition: all .2s linear;
+}
+
+.flexButtons:hover {
+  background-color: rgb(205, 148, 249);
+  padding: 10px 15px;
+}
+
+.flexButtons:focus {
+  background-color: rgb(205, 148, 249);
+  padding: 10px 15px;
+}
