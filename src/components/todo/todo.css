@@ -106,3 +106,16 @@
   border-radius: 5px;
   font-size: 12px;
 }
+
+.toDo-head {
+  max-width: 800px;
+  padding: 10px;
+  background-color: #c4f9f9;
+  border-radius: 15px;
+  border: 2px #b2b2b2 solid;
+  box-shadow: 2px 2px 5px grey;
+}
+
+.toDo-head a {
+  text-decoration: underline;
+}

@@ -24,16 +24,7 @@ export default function ToDoMain() {
     }))
   }
 
-  useEffect(() => {
-    fetch('http://localhost:3333/notes',
-    {
-      method: 'GET',
-    }).then(res => res.json()).then(notes => {
-      setNotes(notes)
-    })
-  }, [])
-
-    const isDisabled = () => {
+  const isDisabled = () => {
     if (input.length > 0) {
       setDisabled(false)
     } else {
@@ -46,21 +37,9 @@ export default function ToDoMain() {
   function addNote() {
     const newNote = {
       text: input,
+      _id: Date.now(),
     }
-    fetch('http://localhost:3333/notes', {
-      headers: {
-      'Content-Type': 'application/json'
-    },
-      method: "POST",
-      body: JSON.stringify(newNote),
-    }).then((res) => {
-      res.json().then((data) => {
-        newNote._id = data.insertedId
-        if (res.status === 200) {
-          setNotes((prevNotesState) => [...prevNotesState, newNote]);
-        }
-      })
-    })
+    setNotes((prevNotesState) => [...prevNotesState, newNote]);
     setInput('')
   }
 
@@ -79,6 +58,7 @@ export default function ToDoMain() {
 
   return (
     <div className='toDo-main'>
+      <h1 className='toDo-head'>Работает без сервера. Если вы хотите увидеть реализацию серверной части на стеке React + NodeJS + MongoDB, то следуйте <a href="https://github.com/hantl1ve/app-for-presentation/blob/master/README.md" target='_blank' rel="noreferrer">инструкции</a></h1>
       <div className='inputWrapper'>
         <input type="text" className='input' autoFocus value={input} onChange={handleChange} onKeyDown={handleKeyPress}/>
         <button className='inputButton' onClick={addNote} disabled={disabled}>Add note</button>

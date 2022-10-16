@@ -16,35 +16,15 @@ export default function ToDoItem(props) {
   }, [textbody, props.text])
 
   function deleteNote() {
-    fetch('http://localhost:3333/notes', {
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      method: "DELETE",
-      body: JSON.stringify({id: props.id}),
-    }).then(res => {
-      if (res.status === 200) {
-        props.onDelete(props.id)
-      };
-    });
+    props.onDelete(props.id);
   };
 
   function changeNote() {
-    fetch('http://localhost:3333/notes', {
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      method: "PUT",
-      body: JSON.stringify({id: props.id, text: textbody}),
-    }).then(res => {
-      if (res.status === 200) {
-        setIsSaveStatusShow(true)
-        setTimeout(() => {
-          setIsSaveStatusShow(false)
-        }, 2000)
-        props.onChange(props.id, textbody);
-      };
-    })
+    setIsSaveStatusShow(true)
+    setTimeout(() => {
+      setIsSaveStatusShow(false)
+    }, 2000)
+    props.onChange(props.id, textbody);
   };
 
 
