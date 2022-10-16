@@ -1,13 +1,15 @@
 import './App.css';
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route, Outlet, Link, Navigate } from "react-router-dom";
 import Main from './components/main/main';
 import ToDoMain from './components/todo/todo';
+
+const BASE_PATH = '/app-for-presentation/'
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Layout/>}>
+        <Route path={BASE_PATH} element={<Layout/>}>
           <Route index element={<Main/>}/>
           <Route path="todo" element={<ToDoMain/>}/>
           <Route path="*" element={<NoMatch />}/>
@@ -23,10 +25,10 @@ function Layout() {
       <nav className='nav'>
         <ul className='list'>
           <li>
-            <Link className='link' to="/">home</Link>
+            <Link className='link' to={BASE_PATH}>home</Link>
           </li>
           <li>
-            <Link className='link' to="/todo">todo-list</Link>
+            <Link className='link' to={BASE_PATH + "todo"}>todo-list</Link>
           </li>
         </ul>
       </nav>
@@ -40,7 +42,7 @@ function NoMatch() {
     <div>
       <h2>Nothing to see here!</h2>
       <p>
-        <Link to="/">Go to the home page</Link>
+        <Navigate to={BASE_PATH} />
       </p>
     </div>
   );
