@@ -6,12 +6,6 @@ const client = new MongoClient(uri);
 
 async function main(){
 
-    /**
-     * Connection URI. Update <username>, <password>, and <your-cluster-url> to reflect your cluster.
-     * See https://docs.mongodb.com/ecosystem/drivers/node/ for more details
-     */
-
-
     async function listDatabases(client){
       databasesList = await client.db().admin().listDatabases();
 
@@ -51,11 +45,9 @@ async function deleteNote(value) {
 }
 
 async function changeNote(value) {
-  console.log(value.id, value.text)
   const database = client.db('testdb');
   const notesCollection = database.collection('notes');
   const note = await notesCollection.updateOne({"_id" : ObjectId(value.id)} , {$set: {text : value.text}});
-  console.log(note)
   return note;
 }
 

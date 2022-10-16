@@ -4,22 +4,18 @@ import Main from './components/main/main';
 import ToDoMain from './components/todo/todo';
 
 function App() {
-
-  
-
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />}/>
-          <Route path="todo" element={<ToDo />} />
-          <Route path="*" element={<NoMatch />} />
+        <Route path="/" element={<Layout/>}>
+          <Route index element={<Main/>}/>
+          <Route path="todo" element={<ToDoMain/>}/>
+          <Route path="*" element={<NoMatch />}/>
         </Route>
       </Routes>
     </div>
   );
 }
-
 
 function Layout() {
   return (
@@ -39,18 +35,6 @@ function Layout() {
   );
 }
 
-function Home() {
-  return (
-    <Main/>
-  );
-}
-
-function ToDo() {
-  return (
-    <ToDoMain/>
-  );
-}
-
 function NoMatch() {
   return (
     <div>
@@ -61,6 +45,5 @@ function NoMatch() {
     </div>
   );
 }
-
 
 export default App;

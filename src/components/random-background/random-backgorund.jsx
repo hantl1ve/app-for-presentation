@@ -12,12 +12,9 @@ export default function RandomBackground() {
     body.style.backgroundColor = color;
   }
 
-
   return (
     <div className='randomBackground-wrapper'>
-      <button className='btn' onClick={() => {
-        getRandomColor()
-      }}>Click for change random background-color</button>
+      <button className='btn' onClick={getRandomColor}>Click for change random background-color</button>
       <div className="randomBackground-item">
         hover me
       </div>

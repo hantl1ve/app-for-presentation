@@ -5,7 +5,7 @@ import AboutMe from '../aboutMe/aboutMe';
 import Flexbox from '../flexbox/flexbox';
 
 export default function Main() {
-
+  const helloDiv = useRef();
   const changeAnimation = () => {
     if (helloDiv.current.classList.contains('helloAnimation')) {
       helloDiv.current.classList.remove('helloAnimation');
@@ -13,8 +13,6 @@ export default function Main() {
       helloDiv.current.classList.add('helloAnimation');
     }
   }
-
-  const helloDiv = useRef();
 
   return (
     <div className='main'>
@@ -24,7 +22,7 @@ export default function Main() {
       </div>
       <RandomBackground />
       <AboutMe/>
-      <Flexbox />
+      <Flexbox/>
     </div>
   )
 };
