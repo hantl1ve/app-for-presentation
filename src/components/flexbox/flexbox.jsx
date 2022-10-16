@@ -24,7 +24,6 @@ export default function Flexbox() {
     } ,
     {
       title: 3,
-
     } ,
     {
       title: 4,

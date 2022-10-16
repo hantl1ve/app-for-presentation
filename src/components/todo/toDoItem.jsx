@@ -4,14 +4,14 @@ import { useState, useEffect } from 'react'
 export default function ToDoItem(props) {
 
   const [textbody, setTextboxy] = useState(props.text)
-  const [status, setStatus] = useState('none')
-  const [isShow, setIsShow] = useState('block')
+  const [isSaveStatusShow, setIsSaveStatusShow] = useState(false)
+  const [isShow, setIsShow] = useState(false)
  
   useEffect(() => {
     if (props.text !== textbody) {
-      setIsShow('block')
+      setIsShow(true)
     } else {
-      setIsShow('none')
+      setIsShow(false)
     }
   }, [textbody, props.text])
 
@@ -38,11 +38,12 @@ export default function ToDoItem(props) {
       body: JSON.stringify({id: props.id, text: textbody}),
     }).then(res => {
       if (res.status === 200) {
-        console.log('успешно')
-        setStatus('block')
-        setTimeout(() => {setStatus('none')}, 2000)
+        setIsSaveStatusShow(true)
+        setTimeout(() => {
+          setIsSaveStatusShow(false)
+        }, 2000)
         props.onChange(props.id, textbody);
-      }
+      };
     })
   };
 
@@ -53,7 +54,7 @@ export default function ToDoItem(props) {
       <textarea name="" id="" cols="32" rows="10" value={textbody} onChange={(e) => setTextboxy(e.target.value)}>
       </textarea>
       <div className='removeNote' onClick={deleteNote}><i className="fa fa-times" aria-hidden="true"></i></div>
-      <div className='saveNote' onClick={changeNote} style={{display: isShow}}><i className="fa fa-check" aria-hidden="true"></i></div>
-      <div className='saveNote-status' style={{display: status}}>Note Saved</div>
+      <div className='saveNote' onClick={changeNote} style={{display: isShow ? 'block' : 'none'}}><i className="fa fa-check" aria-hidden="true"></i></div>
+      <div className='saveNote-status' style={{display: isSaveStatusShow ? 'block' : 'none'}}>Note Saved</div>
     </div>)
 };
